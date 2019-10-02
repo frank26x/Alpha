@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Alertas puro css</title>
+<meta name="author" content="Frank Del Orbe">
+<style>
+  html {
+  margin: 40px 20px;
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.alert .alert-link {
+  font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+.alert > p + p {
+  margin-top: 5px;
+}
+.alert-success {
+  background-color: #64DD17;
+  color: #fff;
+}
+.alert-info {
+  background-color: #2196F3;
+  color: #fff;
+}
 
+.alert-warning {
+  background-color: #FFD600;
+  color: #fff;
+}
+.alert-error {
+  background-color: #EF1C1C;
+  color: #fff;
+}
+.close-container {
+margin: auto;
+width: 50px;
+cursor: pointer;
+}
+
+.leftright {
+height: 4px;
+width: 20px;
+position: absolute;
+margin-top: 24px;
+background-color: #fff;
+border-radius: 2px;
+transform: rotate(45deg);
+transition: all .3s ease-in;
+}
+
+.rightleft {
+height: 4px;
+width: 20px;
+position: absolute;
+margin-top: 24px;
+background-color: #fff;
+border-radius: 2px;
+transform: rotate(-45deg);
+transition: all .3s ease-in;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 40px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+
+}
+
+.close-container:hover .leftright {
+transform: rotate(-45deg);
+background-color: #000;
+}
+
+.close-container:hover .rightleft {
+transform: rotate(45deg);
+background-color: #000;
+}
+
+</style>
+</head>
+<body>
+<div class="alert alert-success" role="alert"><strong>Well done! You successfully read this important alert message.</strong>
+<div class="close-container">
+<div class="close">
+<div class="leftright"></div>
+<div class="rightleft"></div>
+</div>
+</div>
+</div>
+<div class="alert alert-info" role="alert"><strong>Heads up! This alert needs your attention, but it's not super important.</strong> </div>
+<div class="alert alert-warning" role="alert"><strong>Warning!  Better check yourself, you're not looking too good.</strong></div>
+<div class="alert alert-error" role="alert"><strong>Oh snap! Change a few things up and try submitting again.</strong></div>
+<button class="reset">reset</button>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script>
+ $('.close-container').on('click', function () {
+  $(this).parent('.alert').hide();
+});
+
+$('.reset').on('click', function () {
+  $('.alert').show();
+});
+
+  </script>
+  <a href="https://github.com/frank26x/alert-puro-css" target="_blank">Github</a>
+</body>
+</html>
